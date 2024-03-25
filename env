@@ -14,15 +14,17 @@
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-# CI_ENVIRONMENT = production
+ CI_ENVIRONMENT = development
 
 #--------------------------------------------------------------------
 # APP
 #--------------------------------------------------------------------
 
-# app.baseURL = ''
+#  app.baseURL = 'http://localhost/contvect/public/'
+app_baseURL = 'http://localhost:8080/'
 # If you have trouble with `.`, you could also use `_`.
-# app_baseURL = ''
+#  app_baseURL = 'http://localhost/contvect/public/'
+app_baseURL = 'http://localhost:8080/'
 # app.forceGlobalSecureRequests = false
 # app.CSPEnabled = false
 
@@ -30,13 +32,13 @@
 # DATABASE
 #--------------------------------------------------------------------
 
-# database.default.hostname = localhost
-# database.default.database = ci4
-# database.default.username = root
-# database.default.password = root
-# database.default.DBDriver = MySQLi
-# database.default.DBPrefix =
-# database.default.port = 3306
+ database.default.hostname = localhost
+ database.default.database = bd_cont_vectores
+ database.default.username = root
+ database.default.password = 
+ database.default.DBDriver = MySQLi
+ database.default.DBPrefix =
+ database.default.port = 3306
 
 # database.tests.hostname = localhost
 # database.tests.database = ci4_test
@@ -141,3 +143,15 @@
 #--------------------------------------------------------------------
 
 # curlrequest.shareOptions = false
+
+#--------------------------------------------------------------------
+# PHPMailer
+#--------------------------------------------------------------------
+
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_USERNAME = '433d3127e53251'
+EMAIL_PASSWORD = '********4dec'
+EMAIL_ENCRYPTATION = 'TLS'
+EMAIL_PORT = 587
+EMAIL_FROM_ADDRESS = 'info@localhost'
+EMAIL_FROM_NAME = 'localhost'
