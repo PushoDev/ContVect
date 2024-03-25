@@ -65,7 +65,7 @@
                             <td><?php echo $key->cmf ?></td>
                             <td>
                                 <div class="table-actions align-content-center">
-                                    <a href="<?php echo route_to('febriles/editar_pacientes/$key->id'); ?>" data-color="#265ed7" style="color: rgb(38, 94, 215);"><i class="icon-copy dw dw-edit2"></i></a>
+                                    <a href="<?php echo route_to('febriles/editar_pacientes/' .$key->id); ?>" data-color="#265ed7" style="color: rgb(38, 94, 215);"><i class="icon-copy dw dw-edit2"></i></a>
                                     <a href="<?php echo "Eliminar Paciente"; ?>" data-color="#e95959" style="color: rgb(233, 89, 89);"><i class="icon-copy dw dw-delete-3"></i></a>
                                 </div>
                             </td>
@@ -75,6 +75,8 @@
                 <hr>
 
                 <?php print_r($datos); ?>
+                <hr>
+                <?php print_r($key->id); ?>
             </div>
         </div>
     </div>

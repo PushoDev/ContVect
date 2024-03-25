@@ -24,5 +24,6 @@
         </div>
     </div>
 </div>
---------- ACTUALIZAR PACIENTE -------------
+
+
 <?= $this->endSection() ?>
