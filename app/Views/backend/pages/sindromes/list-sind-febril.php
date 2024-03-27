@@ -81,6 +81,8 @@
         </div>
     </div>
 
+<?php include('modals/list-sind-modal-form.php'); ?>
+
 
 
     <?= $this->endSection() ?>
