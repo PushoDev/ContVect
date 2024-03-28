@@ -1,7 +1,7 @@
 <div class="modal fade bs-example-modal-lg" id="pacientes-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;" data-backdrop="static">
 	<div class="modal-dialog modal-lg modal-dialog-centered">
 		<!-- Formulario -->
-		<form class="modal-content tab-wizard wizard-circle id=" steps-uid-0">
+		<form class="modal-content tab-wizard wizard-circle id=" steps-uid-0" action="<?= route_to('agregar-paciente') ?>" method="post" id="agg_paciente_form">
 			<div class="modal-header">
 				<h4 class="modal-title text-blue" id="myLargeModalLabel">
 					Modal para Agregar Pacientes
@@ -17,6 +17,7 @@
 					<div class="pd-20 card-box">
 
 						<div class="tab">
+							<!-- botones superiores -->
 							<ul class="nav nav-pills justify-content-end" role="tablist">
 								<li class="nav-item">
 									<a class="nav-link text-blue active" data-toggle="tab" href="#home6" role="tab" aria-selected="false"><i class="icon-copy fa fa-user" aria-hidden="true"></i> Datos Personales</a>
@@ -30,6 +31,7 @@
 							</ul>
 							<hr>
 							<div class="tab-content">
+								<!-- datos personales -->
 								<div class="tab-pane fade active show" id="home6" role="tabpanel">
 									<div class="row">
 
@@ -41,14 +43,14 @@
 										</div>
 										<div class="col-md-6 col-sm-12">
 											<div class="form-group">
-												<label>Nombre(s) y Apellidos</label>
-												<input type="text" class="form-control">
+												<label for="nomre_apellidos">Nombre(s) y Apellidos</label>
+												<input type="text" class="form-control" name="nombre_apellidos" id="nombre_apellidos">
 											</div>
 										</div>
 										<div class="col-md-2 col-sm-12">
 											<div class="form-group">
-												<label>Edad</label>
-												<input type="text" class="form-control">
+												<label for="edad">Edad</label>
+												<input type="text" class="form-control" name="edad" id="edad">
 											</div>
 										</div>
 
@@ -67,8 +69,8 @@
 										</div>
 										<div class="col-md-6 col-sm-12">
 											<div class="form-group">
-												<label>Dirección de Residencia</label>
-												<input type="text" class="form-control">
+												<label for="direccion_residencia">Dirección de Residencia</label>
+												<input type="text" class="form-control" name="direccion_residencia" id="direccion_residencia">
 											</div>
 										</div>
 										<div class="col-md-3 col-sm-12">
@@ -80,11 +82,13 @@
 
 									</div>
 								</div>
+								<!-- observaciones -->
 								<div class="tab-pane fade" id="profile6" role="tabpanel">
 									<div class="pd-20">
 										----- DATOS DE SALUD -------
 									</div>
 								</div>
+								<!-- otros datos -->
 								<div class="tab-pane fade" id="contact6" role="tabpanel">
 									<div class="pd-20">
 										----- OTRAS OBSERVACIONES --------

@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Libraries\CIAuth;
 use App\Models\User;
 use CodeIgniter\HTTP\ResponseInterface;
+use App\Models\Sindromes;
 
 class AdminController extends BaseController
 {
@@ -13,8 +14,12 @@ class AdminController extends BaseController
 
     public function index()
     {
+        $SinController = new Sindromes();
+        $pacientes = $SinController->cantidadPacientes();
+
         $data = [
-            'pageTitle'=> 'DashBoard'
+            'pageTitle'=> 'DashBoard',
+            'pacientes' => $pacientes,
         ];
         return view('backend/pages/home', $data);
     }

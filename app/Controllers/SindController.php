@@ -18,38 +18,43 @@ class SindController extends BaseController
     public function sindromesFebriles()
     {
         $SindController = new Sindromes();
+        $totalPacientes = $SindController->cantidadPacientes();
         $datos = $SindController->listar_pacientes();
+
+        $mensaje = session('mensaje');
 
         $data = [
             'pageTitle'=>'Sindromes Febriles',
             'validation' => null,
             'datos' => $datos,
+            'mensaje' => $mensaje,
+            'totalPacientes' => $totalPacientes,
         ];
         return view('backend/pages/sindromes/list-sind-febril', $data);
     }
 
-    //Editar pacientes
-    public function editPacientes($id)
+    // Agregar paciente
+    public function aggPaciente()
     {
-
-        $data = [
-            'pageTitle' => 'Actualizar Paciente',
-            'validation' => null,
-            'id' => $id,
+        //    print_r($_POST);
+        $datos = [
+            "nombre_apellidos" => $_POST['nombre_apellidos'],
+            "edad" => $_POST['edad'],
+            "direccion_residencia" => $_POST['direccion_residencia'],
+            
         ];
-        return view('backend/pages/sindromes/list-sind-febril-act', $data);
-    }
 
-    //Pantalla para editar paciente
-    //Eliminar paciente
-    //Insertar nuevo paciente
-    public function insertPaciente()
-    {
-        $data = [
-            'pageTitle' => 'Agregar nuevo paciente',
-            'validation' => null,
-        ];
-        return view('backend/pages/sindromes/list-sind-febril-inst', $data);
+        $SindController = new Sindromes();
+        // echo $SindController->insertarPaciente($datos);
+
+        $respuesta = $SindController->insertarPaciente($datos);
+
+        if ($respuesta > 0) {
+            return redirect()->to(route_to('sindromes_febriles'))->with('mensaje', '1');
+        } else {
+            return null;
+        }
+        
     }
 
 }
