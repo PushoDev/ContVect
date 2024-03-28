@@ -23,10 +23,6 @@
 		<link rel="stylesheet" type="text/css" href="/assets/sweetalert2/sweetalert2.css" />
 		<!-- Update photo -->
 		<link rel="stylesheet" href="/assets/ijabo/ijaboCropTool.min.css">
-		<!-- DataTables -->
-		<link rel="stylesheet" type="text/css" href="/assets/datatables/css/dataTables.bootstrap4.min.css" />
-		<link rel="stylesheet" type="text/css" href="/assets/datatables/css/responsive.bootstrap4.min.css" />
-
 
 		<?= $this->renderSection('stylesheets') ?>
 	</head>
@@ -59,20 +55,6 @@
 		<script src="/assets/sweetalert2/sweetalert2.all.js"></script>
 		<script src="/assets/sweetalert2/sweet-alert.init.js"></script>
 		<script src="/assets/ijabo/ijaboCropTool.min.js"></script>
-		<script src="/assets/datatables/js/jquery.dataTables.min.js"></script>
-		<script src="/assets/datatables/js/dataTables.bootstrap4.min.js"></script>
-		<script src="/assets/datatables/js/dataTables.responsive.min.js"></script>
-		<script src="/assets/datatables/js/responsive.bootstrap4.min.js"></script>
-		<!-- buttons for Export datatable -->
-		<script src="/assets/datatables/js/dataTables.buttons.min.js"></script>
-		<script src="/assets/datatables/js/buttons.bootstrap4.min.js"></script>
-		<script src="/assets/datatables/js/buttons.print.min.js"></script>
-		<script src="/assets/datatables/js/buttons.html5.min.js"></script>
-		<script src="/assets/datatables/js/buttons.flash.min.js"></script>
-		<script src="/assets/datatables/js/pdfmake.min.js"></script>
-		<script src="/assets/datatables/js/vfs_fonts.js"></script>
-		<!-- Datatable Setting js -->
-		<script src="/backend/vendor/scripts/datatable-setting.js"></script>
 		
 		<?= $this->renderSection('scripts') ?>
 	</body>

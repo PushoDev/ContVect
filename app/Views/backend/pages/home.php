@@ -44,9 +44,9 @@
         <div class="card-box height-100-p widget-style3">
             <div class="d-flex flex-wrap">
                 <div class="widget-data">
-                    <div class="weight-700 font-24 text-dark">124,551</div>
+                    <div class="weight-700 font-24 text-dark"><?php echo $pacientes ?></div>
                     <div class="font-14 text-secondary weight-500">
-                        Total Patient
+                        Total Pacientes
                     </div>
                 </div>
                 <div class="widget-icon">
