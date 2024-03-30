@@ -37,6 +37,8 @@ $routes->group('admin', static function($routes){
         /** RUTAS PARA SINDROMES FEBRILES */
         $routes->get('sindromes_febriles', 'SindController::sindromesFebriles', ['as'=>'sindromes_febriles']);
         $routes->post('agregar-paciente', 'SindController::aggPaciente', ['as'=>'agregar-paciente']);
+        $routes->get('paciente/edit_paciente/(:any)', 'SindController::editPaciente/$1', ['as'=>'paciente/edit_paciente/(:any)']);
+        $routes->post('update-paciente', 'SindController::updatePaciente', ['as'=>'update-paciente']);
         
     });
 
