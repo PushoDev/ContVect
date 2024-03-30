@@ -57,4 +57,38 @@ class SindController extends BaseController
         
     }
 
+    public function editPaciente($id)
+    {
+        $obtener = ["id" => $id];
+
+        $SindController= new Sindromes();
+        $respuesta = $SindController->obtenerPaciente($obtener);
+
+        $data = [
+            'pageTitle'=>'Editar Paciente',
+            'validation' => null,
+            'respuesta' => $respuesta,
+        ];
+        return view('backend/pages/sindromes/edit-sind-febril', $data);
+    }
+
+    public function updatePaciente()
+    {
+        $datos = [
+            "nombre_apellidos" => $_POST['nombre_apellidos'],
+            "edad" => $_POST['edad'],
+            "direccion_residencia" => $_POST['direccion_residencia'],
+        ];
+
+        $id = $_POST['id'];
+        $SindController = new Sindromes();
+        $respuesta = $SindController->actualizarPaciente($datos, $id);
+
+        if ($respuesta) {
+            return redirect()->to(route_to('sindromes_febriles'))->with('mensaje', '2');
+        } else {
+            return null;
+        }
+    }
+
 }

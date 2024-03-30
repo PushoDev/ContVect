@@ -29,12 +29,20 @@ class Sindromes extends Model
         return $this->db->insertID();
     }
 
-    public function obtenerPaciente($datos)
+    public function obtenerPaciente($obtener)
     {
         $nombre_appellidos = $this->db->table('t_sindromes');
-        $nombre_appellidos->where($datos);
+        $nombre_appellidos->where($obtener);
 
         return $nombre_appellidos->get()->getResultArray();
     }
     
+    public function actualizarPaciente($datos, $id)
+    {
+        $nombre_appellidos = $this->db->table('t_sindromes');
+        $nombre_appellidos->set($datos);
+        $nombre_appellidos->where('id', $id);
+
+        return $nombre_appellidos->update();
+    }
 }

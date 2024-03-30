@@ -1,3 +1,4 @@
+
 <?= $this->extend('backend/layout/pages-layout') ?>
 <?= $this->section('content') ?>
 
@@ -76,6 +77,7 @@
                                         </div>
                                     <?php endif; ?>
 
+                                    <input type="text" name="id" id="id" hidden>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -104,7 +106,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Nombre de usuario</label>
-                                                <input name="cargo" type="text" placeholder="Nick o Usuario" value="<?= get_user()->username ?>" class="form-control form-control-lg">
+                                                <input name="username" id="username" type="text" placeholder="Nick o Usuario" value="<?= get_user()->username ?>" class="form-control form-control-lg">
                                             </div>
                                             <?php if ($validation->getError('username')) : ?>
                                                 <div class="d-block text-danger" style="margin-top: -25px;margin-bottom: 15px;">
@@ -116,7 +118,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Correo Electrónico</label>
-                                                <input name="email" type="text" placeholder="Correo Electrónico" value="<?= get_user()->email ?>" class="form-control form-control-lg">
+                                                <input name="email" id="email" type="text" placeholder="Correo Electrónico" value="<?= get_user()->email ?>" class="form-control form-control-lg">
                                             </div>
                                             <?php if ($validation->getError('email')) : ?>
                                                 <div class="d-block text-danger" style="margin-top: -25px;margin-bottom: 15px;">
@@ -128,7 +130,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Cargo o Especialidad</label>
-                                                <input name="cargo" type="text" placeholder="Cargo o Especialidad" value="<?= get_user()->cargo ?>" class="form-control form-control-lg">
+                                                <input name="cargo" id="cargo" type="text" placeholder="Cargo o Especialidad" value="<?= get_user()->cargo ?>" class="form-control form-control-lg">
                                             </div>
                                             <?php if ($validation->getError('cargo')) : ?>
                                                 <div class="d-block text-danger" style="margin-top: -25px;margin-bottom: 15px;">
@@ -140,7 +142,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="">Biografía</label>
-                                        <textarea name="bio" id="" cols="30" rows="10" class="form-control" placeholder="Biografia de trabajo..."><?= get_user()->bio ?></textarea>
+                                        <textarea name="bio" id="bio" cols="30" rows="10" class="form-control" placeholder="Biografia de trabajo..."><?= get_user()->bio ?></textarea>
                                         <span class="form-control-feedback has-danger"></span>
                                     </div>
                                     <button type="submit" class="btn btn-success"><i class="icon-copy bi bi-arrow-repeat"></i> Actualizar Datos</button>
@@ -167,7 +169,7 @@
 
 <?= $this->section('scripts') ?>
 <script>
-    ! function($) {
+    /*! function($) {
         "use strict";
 
         var SweetAlert = function() {};
@@ -195,6 +197,6 @@
     function($) {
         "use strict";
         $.SweetAlert.init()
-    }(window.jQuery);
+    }(window.jQuery); */
 </script>
 <?= $this->endSection() ?>

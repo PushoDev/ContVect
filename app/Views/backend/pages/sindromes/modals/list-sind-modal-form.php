@@ -13,7 +13,7 @@
 			<div class="modal-body">
 				<div class="wizard-content">
 
-				<!-- Contenido del Modal -->
+					<!-- Contenido del Modal -->
 					<div class="pd-20 card-box">
 
 						<div class="tab">
@@ -97,7 +97,7 @@
 							</div>
 						</div>
 					</div>
-				<!-- Fin del Contenido del Modal -->
+					<!-- Fin del Contenido del Modal -->
 
 				</div>
 				<div class="modal-footer">
