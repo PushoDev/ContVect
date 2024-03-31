@@ -31,6 +31,8 @@ $routes->group('admin', static function($routes){
         /** RUTAS PARA TODO EL DASHBOARD */
         $routes->get('home', 'AdminController::index',['as'=>'admin.home']);
         $routes->get('logout', 'AdminController::logoutHandler',['as'=>'admin.logout']);
+
+        /** RUTAS PARA PERFIL DE USUARIO */
         $routes->get('profile', 'AdminController::profile',['as'=>'admin.profile']);
         $routes->post('update-personal-details', 'AdminController::updatePersonalDetails',['as'=>'update-personal-details']);
 
