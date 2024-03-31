@@ -20,16 +20,19 @@
         </div>
     </div>
 </div>
+<hr>
 
 <div class="row">
     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30">
         <div class="pd-20 card-box height-100-p">
             <div class="profile-photo">
-                <a href="modal" class="edit-avatar"><i class="fa fa-pencil"></i></a>
+
+                <a href="javascript:;" onclick="event.preventDefault();document.getElementById('user_profile_file').click();" class="edit-avatar"><i class="fa fa-pencil"></i></a>
+                <input type="file" name="user_profile_file" id="user_profile_file" class="d d-none" style="opacity: 0;">                
                 <img src="<?= get_user()->picture == null ? '/assets/images/users/user.png' : '/assets/images/users/' . get_user()->picture ?>" alt="" class="avatar-photo ci-avatar-photo">
 
             </div>
-            <h5 class="text-center h5 mb-0 ci-user-name"><?= get_user()->nombre ?></h5>
+            <h5 class="text-center h5 mb-0 ci-nombre"><?= get_user()->nombre ?></h5>
             <p class="text-center text-muted font-14 ci-user-email">
                 <?= get_user()->email ?>
             </p>
@@ -66,7 +69,7 @@
                                         <div class="col col-md-6">
                                             <div class="form form-group">
                                                 <label for="" class="text text-blue-50">Nombre(s):</label>
-                                                <input type="text" name="nombre" class="form-control" placeholder="Nombre Completo" value="<?= get_user()->nombre ?>">
+                                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre Completo" value="<?= get_user()->nombre ?>">
                                                 <span class="text text-danger error-text nombre_error"></span>
                                             </div>
                                         </div>
@@ -74,7 +77,7 @@
                                         <div class="col col-md-6">
                                             <div class="form form-group">
                                                 <label for="" class="text text-blue-50">Apellidos:</label>
-                                                <input type="text" name="apellidos" class="form-control" placeholder="Apellidos paterno y materno" value="<?= get_user()->apellidos ?>">
+                                                <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder="Apellidos paterno y materno" value="<?= get_user()->apellidos ?>">
                                                 <span class="text text-danger error-text apellidos_error"></span>
                                             </div>
                                         </div>
@@ -82,7 +85,7 @@
                                         <div class="col col-md-6">
                                             <div class="form form-group">
                                                 <label for="" class="text text-blue-50">Nick de Usuario</label>
-                                                <input type="text" name="username" class="form form-control" placeholder="Nick de la Plataforma" value="<?= get_user()->username ?>">
+                                                <input type="text" name="username" id="username" class="form form-control" placeholder="Nick de la Plataforma" value="<?= get_user()->username ?>">
                                                 <span class="text text-danger error-text username_error"></span>
                                             </div>
                                         </div>
@@ -90,14 +93,14 @@
                                         <div class="col col-md-6">
                                             <div class="form form-group">
                                                 <label for="" class="text text-blue-50">Cargo:</label>
-                                                <input type="text" name="cargo" class="form form-control" placeholder="Cargo que desempeña" value="<?= get_user()->cargo ?>" <span class="text text-danger error-text cargo_error"></span>
+                                                <input type="text" name="cargo" id="cargo" class="form form-control" placeholder="Cargo que desempeña" value="<?= get_user()->cargo ?>" <span class="text text-danger error-text cargo_error"></span>
                                             </div>
                                         </div>
 
                                         <div class="col col-md-12">
                                             <div class="form form-group">
                                                 <label for="" class="text text-blue-50">Correo Electrónico:</label>
-                                                <input type="text" name="email" class="form form-control" placeholder="Buzón de Trabajo" value="<?= get_user()->email ?>">
+                                                <input type="text" name="email" id="email" class="form form-control" placeholder="Buzón de Trabajo" value="<?= get_user()->email ?>">
                                                 <span class="text text-danger error-text email_error"></span>
                                             </div>
                                         </div>
@@ -132,6 +135,7 @@
         </div>
     </div>
 </div>
+<hr>
 
 <?= $this->endSection() ?>
 
@@ -148,48 +152,14 @@
 <script src="/assets/ijaboCroopTool/jquery-1.7.1.min.js"></script>
 
 <script>
-    $('#formulario-detalles-personales').on('submit', function(e) {
-        e.preventDefault();
-        var form = this;
-        var formdata = new FormData(form);
-
-        $.ajax({
-            url: $(form).attr('action'),
-            method: $(form).attr('method'),
-            data: formdata,
-            processData: false,
-            dataType: 'json',
-            contentType: false,
-            beforeSend: function() {
-                toastr.remove(),
-                    $(form).find('.span.error-text').text('');
-            },
-            success: function(response) {
-                if ($.isEmptyObject(response.error)) {
-                    if (response.status == 1) {
-                        $('.ci-user-name').each(function() {
-                            $(this).html(response.user_info.name);
-                        });
-                        toastr.success(response.msg);
-                    } else {
-                        toastr.error(response.msg)
-                    }
-                } else {
-                    $.each(response.error, function(prefix, val) {
-                        $(form).find('span.' + prefix + '_error').text(val);
-                    });
-                }
-            }
-        })
-    });
-    /*! function($) {
+    ! function($) {
         "use strict";
 
         var SweetAlert = function() {};
 
         //Alerta para confirmar update de usuario
         SweetAlert.prototype.init = function() {
-            $('#personal_details_from').on('submit', function(e) {
+            $('#').on('submit', function(e) {
                 e.preventDefault();
                 
                 swal({
@@ -210,6 +180,6 @@
     function($) {
         "use strict";
         $.SweetAlert.init()
-    }(window.jQuery); */
+    }(window.jQuery);
 </script>
 <?= $this->endSection() ?>

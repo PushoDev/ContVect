@@ -10,6 +10,14 @@ class User extends Model
     protected $primaryKey       = 'id';
     protected $allowedFields    = ['nombre', 'apellidos', 'cargo', 'email', 'username', 'password', 'picture', 'type_usuario', 'bio', 'created_at', 'update_at'];
 
+    public function obteneruser($id)
+    {
+        $usuario = $this->db->table('users');
+        $usuario->where($id);
+
+        return $usuario->get()->getResultArray();
+    }
+
     public function updatePersonalDetails($user, $id)
     {
         $usuario = $this->db->table('users');
