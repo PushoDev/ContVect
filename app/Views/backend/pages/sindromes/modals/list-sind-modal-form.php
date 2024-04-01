@@ -23,10 +23,10 @@
 									<a class="nav-link text-blue active" data-toggle="tab" href="#home6" role="tab" aria-selected="false"><i class="icon-copy fa fa-user" aria-hidden="true"></i> Datos Personales</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link text-blue" data-toggle="tab" href="#profile6" role="tab" aria-selected="false"><i class="icon-copy fa fa-hospital-o" aria-hidden="true"></i> Observaciones</a>
+									<a class="nav-link text-blue" data-toggle="tab" href="#profile6" role="tab" aria-selected="false"><i class="icon-copy fa fa-hospital-o" aria-hidden="true"></i> Registro Médico</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link text-blue" data-toggle="tab" href="#contact6" role="tab" aria-selected="true"><i class="icon-copy fa fa-stethoscope" aria-hidden="true"></i> Otros Datos</a>
+									<a class="nav-link text-blue" data-toggle="tab" href="#contact6" role="tab" aria-selected="true"><i class="icon-copy fa fa-stethoscope" aria-hidden="true"></i> Observaciones</a>
 								</li>
 							</ul>
 							<hr>
@@ -38,7 +38,7 @@
 										<div class="col-md-4 col-sm-12">
 											<div class="form-group">
 												<label>Fecha de Registro</label>
-												<input type="text" class="form-control date-picker" placeholder="Fecha">
+												<input type="text" class="form-control date-picker" placeholder="Fecha de Ingreso" name="fecha" id="fecha">
 											</div>
 										</div>
 										<div class="col-md-6 col-sm-12">
@@ -60,7 +60,7 @@
 										<div class="col-md-3 col-sm-12">
 											<div class="form-group">
 												<label>Sexo</label>
-												<select class="custom-select">
+												<select class="custom-select" name="sexo" id="sexo">
 													<option selected="">Seleccionar...</option>
 													<option value="1">Masculino</option>
 													<option value="2">Femenino</option>
@@ -76,7 +76,7 @@
 										<div class="col-md-3 col-sm-12">
 											<div class="form-group">
 												<label>Municipio</label>
-												<input type="text" class="form-control">
+												<input type="text" name="municipio" id="municipio" class="form-control">
 											</div>
 										</div>
 
@@ -84,14 +84,99 @@
 								</div>
 								<!-- observaciones -->
 								<div class="tab-pane fade" id="profile6" role="tabpanel">
-									<div class="pd-20">
-										----- DATOS DE SALUD -------
+									<div class="row">
+
+										<div class="col-md-3 col-sm-12">
+											<div class="form-group">
+												<label for="Consultorio">Consultorio</label>
+												<input type="text" class="form-control" name="cmf" id="cmf">
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-12">
+											<div class="form-group">
+												<label for="Consultorio">Área de Salud</label>
+												<input type="text" class="form-control" name="areasalud" id="areasalud">
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label for="Consultorio">Hogar Visitado</label>
+												<input type="text" class="form-control" name="hogar_visitado" id="hogar_visitado">
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label for="Consultorio">GBT No.1</label>
+												<input type="text" class="form-control" name="gbtuno" id="gbtuno">
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label for="Consultorio">GBT No.2</label>
+												<input type="text" class="form-control" name="gbtdos" id="gbtdos">
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-12">
+											<div class="form-group">
+												<label for="Consultorio">Ingresos</label>
+												<input type="text" class="form-control" name="ingresos" id="ingresos">
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label for="Consultorio">Hospital</label>
+												<input type="text" class="form-control" name="hospital" id="hospital">
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-12">
+											<div class="form-group">
+												<label for="Consultorio">Febriles</label>
+												<input type="text" class="form-control" name="febriles" id="febriles">
+											</div>
+										</div>
+
 									</div>
 								</div>
 								<!-- otros datos -->
 								<div class="tab-pane fade" id="contact6" role="tabpanel">
-									<div class="pd-20">
-										----- OTRAS OBSERVACIONES --------
+									<div class="row">
+
+										<div class="col-md-3 col-sm-12">
+											<div class="form-group">
+												<label for="Consultorio">Zika</label>
+												<input type="text" class="form-control" name="zika" id="zika">
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-12">
+											<div class="form-group">
+												<label for="Consultorio">Rangos</label>
+												<input type="text" class="form-control" name="rangos" id="rangos">
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-12">
+											<div class="form-group">
+												<label for="Consultorio">CMU</label>
+												<input type="text" class="form-control" name="cmu" id="cmu">
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-12">
+											<div class="form-group">
+												<label>Fecha de Alta</label>
+												<input type="text" class="form-control date-picker" placeholder="Alta Médica" name="fecha_alta" id="fecha_alta">
+											</div>
+										</div>
+										<div class="col-md-12 col-sm-12">
+											<div class="form-group">
+												<label for="">Síntomas</label>
+												<textarea name="sintomas" id="sintomas" cols="30" rows="10" class="form-control" placeholder="Síntomas del paciente..."></textarea>
+											</div>
+										</div>
+										<div class="col-md-12 col-sm-12">
+											<div class="form-group">
+												<label>Otros</label>
+												<input type="text" class="form-control date-picker" placeholder="Otras Observaciones" name="otros" id="otros">
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>

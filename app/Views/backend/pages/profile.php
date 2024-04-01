@@ -27,8 +27,8 @@
         <div class="pd-20 card-box height-100-p">
             <div class="profile-photo">
 
-                <a href="javascript:;" onclick="event.preventDefault();document.getElementById('user_profile_file').click();" class="edit-avatar"><i class="fa fa-pencil"></i></a>
-                <input type="file" name="user_profile_file" id="user_profile_file" class="d d-none" style="opacity: 0;">                
+                <a href="" onclick="event.preventDefault();document.getElementById('user_profile_file').click();" class="edit-avatar"><i class="fa fa-pencil"></i></a>
+                <input type="file" name="user_profile_file" id="user_profile_file" class="d d-none" style="opacity: 0;">
                 <img src="<?= get_user()->picture == null ? '/assets/images/users/user.png' : '/assets/images/users/' . get_user()->picture ?>" alt="" class="avatar-photo ci-avatar-photo">
 
             </div>

@@ -38,9 +38,26 @@ class SindController extends BaseController
     {
         //    print_r($_POST);
         $datos = [
+            "fecha" => $_POST['fecha'],
             "nombre_apellidos" => $_POST['nombre_apellidos'],
             "edad" => $_POST['edad'],
             "direccion_residencia" => $_POST['direccion_residencia'],
+            "municipio" => $_POST['municipio'],
+            "sexo" => $_POST['sexo'],
+            "cmf" => $_POST['cmf'],
+            "areasalud" => $_POST['areasalud'],
+            "hogar_visitado" => $_POST['hogar_visitado'],
+            "gbtuno" => $_POST['gbtuno'],
+            "gbtdos" => $_POST['gbtdos'],
+            "ingresos" => $_POST['ingresos'],
+            "hospital" => $_POST['hospital'],
+            "febriles" => $_POST['febriles'],
+            "zika" => $_POST['zika'],
+            "rangos" => $_POST['rangos'],
+            "cmu" => $_POST['cmu'],
+            "fecha_alta" => $_POST['fecha_alta'],
+            "sintomas" => $_POST['sintomas'],
+            "otros" => $_POST['otros'],
             
         ];
 
@@ -75,9 +92,27 @@ class SindController extends BaseController
     public function updatePaciente()
     {
         $datos = [
+            "fecha" => $_POST['fecha'],
             "nombre_apellidos" => $_POST['nombre_apellidos'],
             "edad" => $_POST['edad'],
             "direccion_residencia" => $_POST['direccion_residencia'],
+            "municipio" => $_POST['municipio'],
+            "sexo" => $_POST['sexo'],
+            "cmf" => $_POST['cmf'],
+            "areasalud" => $_POST['areasalud'],
+            "hogar_visitado" => $_POST['hogar_visitado'],
+            "gbtuno" => $_POST['gbtuno'],
+            "gbtdos" => $_POST['gbtdos'],
+            "ingresos" => $_POST['ingresos'],
+            "hospital" => $_POST['hospital'],
+            "febriles" => $_POST['febriles'],
+            "zika" => $_POST['zika'],
+            "rangos" => $_POST['rangos'],
+            "cmu" => $_POST['cmu'],
+            "fecha_alta" => $_POST['fecha_alta'],
+            "sintomas" => $_POST['sintomas'],
+            "otros" => $_POST['otros'],
+
         ];
 
         $id = $_POST['id'];
