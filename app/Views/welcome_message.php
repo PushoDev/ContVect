@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Proyecto Control de Vectores</title>
+    <title>Control de Vectores - Mzllo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Shelly - Website" />
     <meta name="author" content="merkulove">
@@ -27,7 +27,7 @@
                 <div class="container">
                     <div class="header-content d-flex flex-wrap align-items-center">
                         <div class="logo">
-                            <a href="index.html" title="">
+                            <a href="<?= route_to('/') ?>" title="">
                                 <img src="/frontend/assets/img/logo.png" alt="" srcset="/frontend/assets/img/01_Logo_2x.png 2x">
                             </a>
                         </div><!--logo end-->
@@ -36,8 +36,8 @@
                                 <div class="contact-info">
                                     <img src="/frontend/assets/img/icon1.png" alt="">
                                     <div class="contact-tt">
-                                        <h4>Call</h4>
-                                        <span>+2 342 5446 67</span>
+                                        <h4>Teléfono</h4>
+                                        <span>+53 23 573631</span>
                                     </div>
                                 </div><!--contact-info end-->
                             </li>
@@ -45,8 +45,8 @@
                                 <div class="contact-info">
                                     <img src="/frontend/assets/img/icon2.png" alt="">
                                     <div class="contact-tt">
-                                        <h4>Work Time</h4>
-                                        <span>Mon - Fri 8 AM - 5 PM</span>
+                                        <h4>Hora de Servicio</h4>
+                                        <span>24 Hrs</span>
                                     </div>
                                 </div><!--contact-info end-->
                             </li>
@@ -54,8 +54,8 @@
                                 <div class="contact-info">
                                     <img src="/frontend/assets/img/icon3.png" alt="">
                                     <div class="contact-tt">
-                                        <h4>Address</h4>
-                                        <span>Franklin St, Greenpoint Ave</span>
+                                        <h4>Dirección</h4>
+                                        <span>Ciudad de Manzanillo</span>
                                     </div>
                                 </div><!--contact-info end-->
                             </li>
@@ -71,18 +71,8 @@
                     <div class="navigation-bar d-flex flex-wrap align-items-center">
                         <nav>
                             <ul>
-                                <li><a class="active" href="index.html" title="">Home</a></li>
-                                <li><a href="about.html" title="">About</a>
-                                    <ul>
-                                        <li><a href="events.html" title="">Events</a>
-                                            <ul>
-                                                <li><a href="event-single.html" title="">Event Single</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="schedule.html" title="">Schedule</a></li>
-                                        <li><a href="error.html" title="">404</a></li>
-                                    </ul>
-                                </li>
+                                <li><a class="active" href="<?= route_to('/') ?>" title="">Portada</a></li>
+                                <li><a href="about.html" title="">Acerca de</a></li>
                                 <li><a href="classes.html" title="">Classes</a>
                                     <ul>
                                         <li><a href="class-single.html" title="">Class Single</a></li>
@@ -98,7 +88,7 @@
                                         <li><a href="post.html" title="">Blog Single</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contacts.html" title="">Contacts</a></li>
+                                <li><a href="<?= route_to('admin.login.form') ?>" title="">Sistema</a></li>
                             </ul>
                         </nav><!--nav end-->
                         <ul class="social-links ml-auto">
@@ -112,7 +102,7 @@
 
             <div class="responsive-menu">
                 <ul>
-                    <li><a href="index.html" title="">Home</a></li>
+                    <li><a href="<?= route_to('/') ?>" title="">Portada</a></li>
                     <li><a href="about.html" title="">About</a></li>
                     <li><a href="events.html" title="">Events</a></li>
                     <li><a href="event-single.html" title="">Event Single</a></li>
@@ -123,7 +113,7 @@
                     <li><a href="teacher-single.html" title="">Teacher Single</a></li>
                     <li><a href="blog.html" title="">Blog</a></li>
                     <li><a href="post.html" title="">Blog Single</a></li>
-                    <li><a href="contacts.html" title="">Contacts</a></li>
+                    <li><a href="<?= route_to('admin.login.form') ?>" title="">Contacts</a></li>
                     <li><a href="error.html" title="">404</a></li>
                 </ul>
             </div><!--responsive-menu end-->
@@ -224,7 +214,7 @@
                             <div class="classes-col wow fadeInUp" data-wow-duration="1000ms">
                                 <div class="class-thumb">
                                     <img src="https://via.placeholder.com/1680x1120" alt="" class="w-100">
-                                    <a href="contacts.html" title="" class="crt-btn">
+                                    <a href="<?= route_to('admin.login.form') ?>" title="" class="crt-btn">
                                         <img src="/frontend/assets/img/icon10.png" alt="">
                                     </a>
                                 </div>
@@ -246,7 +236,7 @@
                             <div class="classes-col wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="200ms">
                                 <div class="class-thumb">
                                     <img src="https://via.placeholder.com/1970x1326" alt="" class="w-100">
-                                    <a href="contacts.html" title="" class="crt-btn">
+                                    <a href="<?= route_to('admin.login.form') ?>" title="" class="crt-btn">
                                         <img src="/frontend/assets/img/icon10.png" alt="">
                                     </a>
                                 </div>
@@ -268,7 +258,7 @@
                             <div class="classes-col wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
                                 <div class="class-thumb">
                                     <img src="https://via.placeholder.com/1440x960" alt="" class="w-100">
-                                    <a href="contacts.html" title="" class="crt-btn">
+                                    <a href="<?= route_to('admin.login.form') ?>" title="" class="crt-btn">
                                         <img src="/frontend/assets/img/icon10.png" alt="">
                                     </a>
                                 </div>
@@ -290,7 +280,7 @@
                             <div class="classes-col wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
                                 <div class="class-thumb">
                                     <img src="https://via.placeholder.com/1296x864" alt="" class="w-100">
-                                    <a href="contacts.html" title="" class="crt-btn">
+                                    <a href="<?= route_to('admin.login.form') ?>" title="" class="crt-btn">
                                         <img src="/frontend/assets/img/icon10.png" alt="">
                                     </a>
                                 </div>
@@ -312,7 +302,7 @@
                             <div class="classes-col">
                                 <div class="class-thumb">
                                     <img src="https://via.placeholder.com/1680x1120" alt="" class="w-100">
-                                    <a href="contacts.html" title="" class="crt-btn">
+                                    <a href="<?= route_to('admin.login.form') ?>" title="" class="crt-btn">
                                         <img src="/frontend/assets/img/icon10.png" alt="">
                                     </a>
                                 </div>
@@ -334,7 +324,7 @@
                             <div class="classes-col">
                                 <div class="class-thumb">
                                     <img src="https://via.placeholder.com/1970x1326" alt="" class="w-100">
-                                    <a href="contacts.html" title="" class="crt-btn">
+                                    <a href="<?= route_to('admin.login.form') ?>" title="" class="crt-btn">
                                         <img src="/frontend/assets/img/icon10.png" alt="">
                                     </a>
                                 </div>
@@ -356,7 +346,7 @@
                             <div class="classes-col">
                                 <div class="class-thumb">
                                     <img src="https://via.placeholder.com/1440x960" alt="" class="w-100">
-                                    <a href="contacts.html" title="" class="crt-btn">
+                                    <a href="<?= route_to('admin.login.form') ?>" title="" class="crt-btn">
                                         <img src="/frontend/assets/img/icon10.png" alt="">
                                     </a>
                                 </div>
@@ -378,7 +368,7 @@
                             <div class="classes-col">
                                 <div class="class-thumb">
                                     <img src="https://via.placeholder.com/1296x864" alt="" class="w-100">
-                                    <a href="contacts.html" title="" class="crt-btn">
+                                    <a href="<?= route_to('admin.login.form') ?>" title="" class="crt-btn">
                                         <img src="/frontend/assets/img/icon10.png" alt="">
                                     </a>
                                 </div>
@@ -658,7 +648,7 @@
                         <div class="col-lg-4">
                             <div class="newsz-ltr-text">
                                 <h2>Join us <br /> and stay tuned!</h2>
-                                <a href="contacts.html" title="" class="btn-default">Join Us <i class="fa fa-long-arrow-alt-right"></i></a>
+                                <a href="<?= route_to('admin.login.form') ?>" title="" class="btn-default">Join Us <i class="fa fa-long-arrow-alt-right"></i></a>
                             </div><!--newsz-ltr-text end-->
                         </div>
                         <div class="col-lg-8">
