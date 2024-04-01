@@ -1,4 +1,3 @@
-
 <?= $this->extend('backend/layout/pages-layout') ?>
 <?= $this->section('content') ?>
 
@@ -21,20 +20,23 @@
         </div>
     </div>
 </div>
+<hr>
 
 <div class="row">
     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30">
         <div class="pd-20 card-box height-100-p">
             <div class="profile-photo">
-                <a href="modal" class="edit-avatar"><i class="fa fa-pencil"></i></a>
+
+                <a href="" onclick="event.preventDefault();document.getElementById('user_profile_file').click();" class="edit-avatar"><i class="fa fa-pencil"></i></a>
+                <input type="file" name="user_profile_file" id="user_profile_file" class="d d-none" style="opacity: 0;">
                 <img src="<?= get_user()->picture == null ? '/assets/images/users/user.png' : '/assets/images/users/' . get_user()->picture ?>" alt="" class="avatar-photo ci-avatar-photo">
 
             </div>
-            <h5 class="text-center h5 mb-0 ci-user-name"><?= get_user()->nombre ?></h5>
+            <h5 class="text-center h5 mb-0 ci-nombre"><?= get_user()->nombre ?></h5>
             <p class="text-center text-muted font-14 ci-user-email">
                 <?= get_user()->email ?>
             </p>
-            <p class="text-center text-blue-50 font-14">
+            <p class="text-center text-blue-50 font-14 ci-user-cargo">
                 <?= get_user()->cargo ?>
             </p>
         </div>
@@ -54,100 +56,69 @@
                     </ul>
                     <div class="tab-content">
                         <!-- Datos de Usuario Tab start -->
-                        <div class="tab-pane fade show active" role="tabpanel">
+                        <div class="tab-pane fade show active" id="detalles_personales" role="tabpanel">
                             <div class="pd-20">
 
-                                <?php $validation = \Config\Services::validation(); ?>
-                                <form action="<?= route_to('update-personal-details'); ?>" method="POST" id="personal_details_from">
-                                    <? csrf_field() ?>
-                                    <?php if (!empty(session()->getFlashdata('success'))) : ?>
-                                        <div class="alert alert-success">
-                                            <?= session()->getFlashdata('success') ?>
-                                            <button type="button" class="close" data-dimiss="alert" aria-label="close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                    <?php endif; ?>
-                                    <?php if (!empty(session()->getFlashdata('fail'))) : ?>
-                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                            <?= session()->getFlashdata('fail') ?>
-                                            <button type="button" class="close" data-dimiss="alert" aria-label="close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                    <?php endif; ?>
+                                <form action="<?= route_to('update-personal-details'); ?>" method="post" id="formulario-detalles-personales">
+
+                                    <?= csrf_field(); ?>
 
                                     <input type="text" name="id" id="id" hidden>
+
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="">Nombre(s)</label>
-                                                <input name="nombre" type="text" placeholder="Nombre(s)" value="<?= get_user()->nombre ?>" class="form-control form-control-lg">
+                                        <div class="col col-md-6">
+                                            <div class="form form-group">
+                                                <label for="" class="text text-blue-50">Nombre(s):</label>
+                                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre Completo" value="<?= get_user()->nombre ?>">
+                                                <span class="text text-danger error-text nombre_error"></span>
                                             </div>
-                                            <?php if ($validation->getError('nombre')) : ?>
-                                                <div class="d-block text-danger" style="margin-top: -25px;margin-bottom: 15px;">
-                                                    <?= $validation->getError('nombre') ?>
-                                                </div>
-                                            <?php endif; ?>
                                         </div>
 
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="">Apellidos</label>
-                                                <input name="apellidos" type="text" placeholder="Apellidos" value="<?= get_user()->apellidos ?>" class="form-control form-control-lg">
+                                        <div class="col col-md-6">
+                                            <div class="form form-group">
+                                                <label for="" class="text text-blue-50">Apellidos:</label>
+                                                <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder="Apellidos paterno y materno" value="<?= get_user()->apellidos ?>">
+                                                <span class="text text-danger error-text apellidos_error"></span>
                                             </div>
-                                            <?php if ($validation->getError('apellidos')) : ?>
-                                                <div class="d-block text-danger" style="margin-top: -25px;margin-bottom: 15px;">
-                                                    <?= $validation->getError('apellidos') ?>
-                                                </div>
-                                            <?php endif; ?>
                                         </div>
 
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="">Nombre de usuario</label>
-                                                <input name="username" id="username" type="text" placeholder="Nick o Usuario" value="<?= get_user()->username ?>" class="form-control form-control-lg">
+                                        <div class="col col-md-6">
+                                            <div class="form form-group">
+                                                <label for="" class="text text-blue-50">Nick de Usuario</label>
+                                                <input type="text" name="username" id="username" class="form form-control" placeholder="Nick de la Plataforma" value="<?= get_user()->username ?>">
+                                                <span class="text text-danger error-text username_error"></span>
                                             </div>
-                                            <?php if ($validation->getError('username')) : ?>
-                                                <div class="d-block text-danger" style="margin-top: -25px;margin-bottom: 15px;">
-                                                    <?= $validation->getError('username') ?>
-                                                </div>
-                                            <?php endif; ?>
                                         </div>
 
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="">Correo Electrónico</label>
-                                                <input name="email" id="email" type="text" placeholder="Correo Electrónico" value="<?= get_user()->email ?>" class="form-control form-control-lg">
+                                        <div class="col col-md-6">
+                                            <div class="form form-group">
+                                                <label for="" class="text text-blue-50">Cargo:</label>
+                                                <input type="text" name="cargo" id="cargo" class="form form-control" placeholder="Cargo que desempeña" value="<?= get_user()->cargo ?>" <span class="text text-danger error-text cargo_error"></span>
                                             </div>
-                                            <?php if ($validation->getError('email')) : ?>
-                                                <div class="d-block text-danger" style="margin-top: -25px;margin-bottom: 15px;">
-                                                    <?= $validation->getError('email') ?>
-                                                </div>
-                                            <?php endif; ?>
                                         </div>
 
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="">Cargo o Especialidad</label>
-                                                <input name="cargo" id="cargo" type="text" placeholder="Cargo o Especialidad" value="<?= get_user()->cargo ?>" class="form-control form-control-lg">
+                                        <div class="col col-md-12">
+                                            <div class="form form-group">
+                                                <label for="" class="text text-blue-50">Correo Electrónico:</label>
+                                                <input type="text" name="email" id="email" class="form form-control" placeholder="Buzón de Trabajo" value="<?= get_user()->email ?>">
+                                                <span class="text text-danger error-text email_error"></span>
                                             </div>
-                                            <?php if ($validation->getError('cargo')) : ?>
-                                                <div class="d-block text-danger" style="margin-top: -25px;margin-bottom: 15px;">
-                                                    <?= $validation->getError('cargo') ?>
-                                                </div>
-                                            <?php endif; ?>
                                         </div>
-                                        
+
                                     </div>
+
                                     <div class="form-group">
-                                        <label for="">Biografía</label>
+                                        <label for="" class="text text-blue-50">Acerca de mi:</label>
                                         <textarea name="bio" id="bio" cols="30" rows="10" class="form-control" placeholder="Biografia de trabajo..."><?= get_user()->bio ?></textarea>
-                                        <span class="form-control-feedback has-danger"></span>
+                                        <span class="text text-danger error-text bio_error"></span>
                                     </div>
-                                    <button type="submit" class="btn btn-success"><i class="icon-copy bi bi-arrow-repeat"></i> Actualizar Datos</button>
+
+                                    <div class="form form-group">
+                                        <button type="submit" class="btn btn-primary"><i class="icon-copy bi bi-arrow-repeat"></i> Guardar Cambios</button>
+                                    </div>
 
                                 </form>
+
                             </div>
                         </div>
                         <!-- Datos de Usuario Tab End -->
@@ -164,19 +135,31 @@
         </div>
     </div>
 </div>
+<hr>
 
 <?= $this->endSection() ?>
 
+<?= $this->section('stylesheets') ?>
+<link rel="stylesheet" href="/assets/ijabo/ijabo.min.css">
+<link rel="stylesheet" href="/assets/ijaboCroopTool/ijaboCropTool.min.css">
+<?= $this->endSection() ?>
+
+
 <?= $this->section('scripts') ?>
+<script src="/assets/ijabo/ijabo.min.js"></script>
+<script src="/assets/ijabo/jquery.ijaboViewer.min.js"></script>
+<script src="/assets/ijaboCroopTool/ijaboCropTool.min.js"></script>
+<script src="/assets/ijaboCroopTool/jquery-1.7.1.min.js"></script>
+
 <script>
-    /*! function($) {
+    ! function($) {
         "use strict";
 
         var SweetAlert = function() {};
 
         //Alerta para confirmar update de usuario
         SweetAlert.prototype.init = function() {
-            $('#personal_details_from').on('submit', function(e) {
+            $('#').on('submit', function(e) {
                 e.preventDefault();
                 
                 swal({
@@ -197,6 +180,6 @@
     function($) {
         "use strict";
         $.SweetAlert.init()
-    }(window.jQuery); */
+    }(window.jQuery);
 </script>
 <?= $this->endSection() ?>

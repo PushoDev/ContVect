@@ -87,7 +87,7 @@
 <hr>
 
 <br>
-<?php echo $totalPacientes; ?>
+<!-- <php echo $totalPacientes; ?> -->
 
 
 <!-- Estructura del modal -->

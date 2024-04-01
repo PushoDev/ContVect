@@ -21,8 +21,8 @@
 		<link rel="stylesheet" type="text/css" href="/backend/vendor/styles/style.css" />
 		<!-- Sweet Alert -->
 		<link rel="stylesheet" type="text/css" href="/assets/sweetalert2/sweetalert2.css" />
-		<!-- Update photo -->
-		<link rel="stylesheet" href="/assets/ijabo/ijaboCropTool.min.css">
+		<link rel="stylesheet" href="/assets/ijabo/ijabo.min.css">
+		
 
 		<?= $this->renderSection('stylesheets') ?>
 	</head>
@@ -54,7 +54,8 @@
 		<script src="/backend/vendor/scripts/layout-settings.js"></script>
 		<script src="/assets/sweetalert2/sweetalert2.all.js"></script>
 		<script src="/assets/sweetalert2/sweet-alert.init.js"></script>
-		<script src="/assets/ijabo/ijaboCropTool.min.js"></script>
+		<script src="/assets/ijabo/ijabo.min.js"></script>
+		<script src="/assets/ijabo/jquery.ijaboViewer.min.js"></script>
 		
 		<?= $this->renderSection('scripts') ?>
 	</body>
